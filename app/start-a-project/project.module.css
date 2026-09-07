@@ -1,0 +1,62 @@
+.page { max-width: 940px; padding-block: 72px 100px; }
+.backLink { color: #bfa9d3; font-size: 12px; padding-block: 14px; }
+.intro { text-align: center; padding-bottom: 44px; background: radial-gradient(ellipse at center, #69428a1c, transparent 70%); }
+.intro h1 { font-size: clamp(44px, 7vw, 72px); line-height: 1.1; letter-spacing: -.055em; margin: 22px 0; }
+.intro h1 span { color: #bca5d3; font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+.intro > p:last-child { color: #a49aaf; font-size: 14px; line-height: 1.8; }
+.form { max-width: 780px; margin-inline: auto; }
+.formNote { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.formNote > span { color: #bfa9d3; font-size: 10px; letter-spacing: .16em; }
+.formNote p, .actions p { font-size: 12px; line-height: 1.7; color: #a49aaf; margin: 0; }
+.card { margin-bottom: 20px; padding: 32px; border: 1px solid #342a3f; border-radius: 12px; background: linear-gradient(130deg, #1a1520ef, #101013f5); box-shadow: 0 16px 44px #0002; animation: arrive .65s var(--ease-out) both; }
+.cardHeading { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+.number { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border: 1px solid #51405f; border-radius: 50%; color: #bfa9d3; background: #211a2b; font: 11px var(--font-geist-mono), monospace; }
+.cardHeading h2 { font-size: 19px; font-weight: 500; letter-spacing: -.025em; margin: 0 0 7px; }
+.cardHeading p { margin: 0; font-size: 12px; color: #a49aaf; line-height: 1.7; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+.field { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.wide, .ratios { grid-column: 1 / -1; }
+.field label, .ratios legend { font-size: 12px; color: #ded7e5; }
+.field label span, .field small { color: #a49aaf; font-size: 11px; line-height: 1.6; }
+.field input, .field select, .field textarea { width: 100%; min-width: 0; min-height: 48px; padding: 13px 14px; color: #f4f0f7; background: #0d0b11; border: 1px solid #39303f; border-radius: 6px; font: inherit; font-size: 14px; color-scheme: dark; transition: border-color .25s, box-shadow .25s; }
+.field textarea { resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: #877e92; opacity: 1; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #b49acb; box-shadow: 0 0 0 3px #ad83d51c; }
+.ratios { padding: 0; margin: 0; border: 0; min-width: 0; }
+.ratios legend { margin-bottom: 12px; }
+.ratios > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.ratios label { position: relative; cursor: pointer; }
+.ratios input { position: absolute; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
+.ratios label > span { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; border: 1px solid #39303f; border-radius: 6px; color: #b4a9be; font-size: 13px; background: #0d0b11; transition: background .25s, border-color .25s; }
+.ratios input:checked + span { background: #302039; color: #eee4f7; border-color: #b49acb; }
+.ratios input:focus-visible + span { outline: 2px solid #d5b6ef; outline-offset: 3px; }
+.ratios i { display: block; border: 1px solid currentColor; border-radius: 2px; width: 23px; height: 14px; }
+.ratios .ratio1 { width: 14px; height: 23px; }
+.ratios .ratio2 { width: 19px; height: 19px; }
+.ratios .ratio3 { border-style: dashed; width: 19px; height: 19px; }
+.actions { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 8px; }
+.actions p { max-width: 310px; }
+.actions button { flex-shrink: 0; }
+.review { margin-top: 32px; padding: 32px; border: 1px solid #80618f; border-radius: 12px; background: #17121d; }
+.review h2 { font-size: 26px; letter-spacing: -.035em; margin: 12px 0; }
+.review > p { color: #b4a9be; font-size: 13px; line-height: 1.8; }
+.review dl { margin: 24px 0 0; }
+.review dl > div { padding-block: 14px; border-top: 1px solid #342a3f; }
+.review dt { font-size: 11px; color: #bfa9d3; margin-bottom: 7px; }
+.review dd { margin: 0; font-size: 14px; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
+@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) {
+  .page { padding-block: 44px 64px; }
+  .intro { padding-bottom: 28px; }
+  .intro > p:last-child { font-size: 13px; }
+  .formNote { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .card, .review { padding: 22px 18px; }
+  .cardHeading { gap: 12px; }
+  .cardHeading h2 { font-size: 18px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .field input, .field select, .field textarea { font-size: 16px; }
+  .ratios > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .actions { flex-direction: column; align-items: stretch; gap: 16px; }
+  .actions button { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .card { animation: none; } }

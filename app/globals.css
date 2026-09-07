@@ -93,6 +93,38 @@ body{isolation:isolate}
 @media(max-width:760px){.editing-background-icon{width:23px;height:23px;opacity:.035}.editing-background-icon:nth-child(n+5){display:none}.editing-background-icon:nth-child(2),.editing-background-icon:nth-child(4){left:auto!important;right:3%}}
 @media(prefers-reduced-motion:reduce){.editing-background-icon{transform:rotate(var(--icon-angle));will-change:auto}}
 
+/* Hero project action: retain the outline at rest, crossfade purple on hover. */
+#home .button-outline[href="/start-a-project"]{position:relative;isolation:isolate;transition:transform .35s var(--ease-out),box-shadow .35s ease,border-color .35s ease,color .35s ease}
+#home .button-outline[href="/start-a-project"]:before{content:"";position:absolute;z-index:-1;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,#654389,#8056a5);opacity:0;transition:opacity .35s ease}
+#home .button-outline[href="/start-a-project"] svg{transition:transform .35s var(--ease-out),translate .35s var(--ease-out)}
+@media(hover:hover) and (pointer:fine){
+  #home .button-outline[href="/start-a-project"]:hover{background:#151416;border-color:#ceb0e8;color:#fff;transform:scale(1.03);box-shadow:0 0 26px #a16bd638,0 6px 20px #0003}
+  #home .button-outline[href="/start-a-project"]:hover:before{opacity:1}
+  #home .button-outline[href="/start-a-project"]:hover svg{transform:rotate(0deg);translate:4px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  #home .button-outline[href="/start-a-project"],#home .button-outline[href="/start-a-project"]:before,#home .button-outline[href="/start-a-project"] svg{transition:none}
+  #home .button-outline[href="/start-a-project"]:hover{transform:none}
+  #home .button-outline[href="/start-a-project"]:hover svg{transform:rotate(-45deg);translate:none}
+}
+
+/* About Me project action. */
+#about .about-project-button{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:54px;max-width:100%;margin-top:20px;padding:16px 26px;border:1px solid #ac8bd0;border-radius:7px;background:linear-gradient(115deg,#654389,#8056a5);color:#fff;font-size:14px;font-weight:600;line-height:1.4;box-shadow:0 4px 18px #70439318;transition:transform .35s var(--ease-out),box-shadow .35s ease,border-color .35s ease}
+#about .about-project-button:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#ffffff18 50%,transparent 80%);transform:translateX(-110%);transition:transform .4s ease}
+#about .about-project-button svg{flex-shrink:0;transition:transform .35s var(--ease-out)}
+#about .about-project-button:focus-visible{outline:2px solid #e2c9ff;outline-offset:5px;box-shadow:0 0 24px #a16bd638}
+@media(hover:hover) and (pointer:fine){
+  #about .about-project-button:hover{transform:scale(1.035);border-color:#ceb0e8;box-shadow:0 0 26px #a16bd638,0 6px 20px #0003}
+  #about .about-project-button:hover svg{transform:translateX(4px)}
+  #about .about-project-button:hover:before{transform:translateX(110%)}
+}
+@media(max-width:480px){#about .about-project-button{width:100%}}
+@media(prefers-reduced-motion:reduce){
+  #about .about-project-button,#about .about-project-button svg{transition:none;transform:none}
+  #about .about-project-button:hover,#about .about-project-button:hover svg{transform:none}
+  #about .about-project-button:before{display:none}
+}
+
 /* Independent depth surfaces preserve each section's existing reveal transforms. */
 .section-depth{display:flow-root}
 .section-depth-surface{display:flow-root;position:relative;transform-origin:50% 50%}

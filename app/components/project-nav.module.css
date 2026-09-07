@@ -1,0 +1,8 @@
+/* Give the additional navigation item room using the existing mobile menu. */
+@media (min-width: 481px) and (max-width: 900px) {
+  .navbar :global(.nav-links) { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 20px; background: #121015; border-bottom: 1px solid #332c3a; }
+  .navbar :global(.nav-links.open) { display: flex; flex-direction: column; gap: 0; }
+  .navbar :global(.nav-links a) { padding: 13px; font-size: 14px; }
+  .navbar :global(.menu-toggle) { display: block; background: transparent; font-size: 22px; width: 40px; height: 40px; }
+  .navbar :global(.nav-cta) { display: none; }
+}
